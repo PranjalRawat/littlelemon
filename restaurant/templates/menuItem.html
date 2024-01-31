@@ -1,0 +1,80 @@
+<title>{{ title }}</title>
+
+<div>
+    {% include "header.html" %}
+</div>
+
+<div class = 'menu_item'>
+    <h1> Menu item</h1>
+    <p class = "navigator">
+        <a href="/"> Home </a>
+            <strong>/</strong>
+        <a href="/menu"> Menu </a>
+            <strong>/</strong>
+        {{modelData.name}}
+    </p>
+
+    <div class = 'row'>
+        <div class = 'column'>
+            <h2> {{modelData.name}} </h2>
+            <p> {{modelData.description}} </p>
+            <p> Price: ${{modelData.price}} </p>
+        </div>
+        <div class = 'column'>
+            <img src="{{ modelData.image.url }}">
+        </div>
+    </div>
+</div>
+
+
+<div>
+    {% include "footer.html" %}
+</div>
+
+<style>
+    .menu_item {
+        margin: 2% 5%;
+        border: 1px solid #EDEFEE;
+        padding: 10px;
+    }
+
+    .menu_item h1 {
+        font-size: 50px;
+        letter-spacing: 2px;
+        margin-bottom: 0px;
+    }
+
+    .menu_item .navigator a{
+        color: #EE9972;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .menu_item .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 1rem;
+        gap: 2rem 1rem;
+    }
+
+    .menu_item .column {
+        flex-basis: 50%;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .menu_item .column h2 {
+        font-size: 2.5rem;
+        color: #333333;
+        margin: 1rem 0;
+    }
+
+    .menu_item .column p {
+        font-size: 1.2rem;
+    }
+
+    .menu_item .column img {
+        max-width: 100%;
+    }
+</style>

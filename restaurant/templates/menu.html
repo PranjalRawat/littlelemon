@@ -1,0 +1,47 @@
+<title>{{ title }}</title>
+
+<div>
+    {% include "header.html" %}
+</div>
+
+<div class = 'menu'>
+    <h1> Menu </h1>
+    {% for data in modelData %}
+        <ul>
+            <a href="/menu_item/{{data.id}}">
+                <li class = 'name'>{{data.name}}</li>
+            </a>
+            <li class = 'price'>${{data.price}}</li>
+        </ul>
+    {% endfor %}
+</div>
+
+<div>
+    {% include "footer.html" %}
+</div>
+
+<style>
+    .menu {
+        margin: 2% 5%;
+    }
+
+    .menu h1 {
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    .menu a {
+        text-decoration: none;
+    }
+
+    .menu .name {
+        font-size: 20px;
+        color: #EE9972;
+    }
+</style>

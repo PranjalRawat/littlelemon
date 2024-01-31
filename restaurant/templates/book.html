@@ -1,0 +1,81 @@
+<title>{{ title }}</title>
+{% include "header.html" %}
+
+<div class = 'reservation'>
+    <h1> Make a reservation </h1>
+    <div class = 'row'>
+        <div class = 'column'>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" id="button" value = 'Reserve'/>
+            </form>
+        </div>
+        <div class="column">
+            <h2>Bookings For <span id="today">{{today_date}}</span></h2>
+            {% if modelData %}
+                Total Bookings: {{ modelData | length }}
+            {% else %}
+                <div id="bookings">No bookings</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div>
+    {% include "footer.html" %}
+</div>
+
+<style>
+    .reservation h1 {
+        font-family: 'Markazi Text', serif;
+        font-size: 40px;
+        letter-spacing: 4px;
+    }
+
+    .reservation {
+        border: 1px solid #EDEFEE;
+        margin: 1% 5%;
+        padding: 0 20px;
+    }
+
+    .reservation .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+
+    .reservation .column {
+        flex-basis: 50%;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        letter-spacing: 1.5px;
+        font-size: 20px;
+    }
+
+    input {
+        width: 80%;
+        display: block;
+        padding: .5rem 1rem;
+        line-height: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    #button {
+        padding: .5rem 1rem;
+        border: 1px solid #495E57;
+        background-color: #495E57;
+        border-radius: 5px;
+        width: 80%;
+        font-size: 1.25rem;
+        display: block;
+        color: #fff;
+        line-height: 25px;
+    }
+</style>

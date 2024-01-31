@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        {% include "header.html" %}
+        <div style="text-align:center; color: #494; font-size:40px;">
+            <h1> Welcome to {{ title }} </h1>
+        </div>
+
+        <div style="padding: 20px; margin: 0 20%;">
+            {% for parag in description%}
+                <p> {{parag}} </p>
+            {% endfor %}
+        </div>
+
+        <div>
+            {% include "footer.html" %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<div class = "header">
+    <img src = "{% static 'littlelemon_header_img.png' %}" alt = "little lemon image">
+    <ul class = "nav_ul">
+        <li class = "list"><a href="/"> Home </a></li>
+        <li class = "list"><a href="/about"> About </a></li>
+        <li class = "list"><a href="/menu"> Menu </a></li>
+        <li class = "list"><a href="/book"> Book </a></li>
+    </ul>
+</div>
+
+<style>
+    .header {
+        margin: 0 5%;
+    }
+
+    .header img {
+        padding: 30px 0;
+    }
+
+    .header ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #495e57;
+    }
+
+    .header li {
+        font-size: 20px;
+        float: left;
+    }
+
+    .header li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+</style>

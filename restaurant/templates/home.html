@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <nav>
+            {% include "header.html" %}
+        </nav>
+
+        <main>
+            <section>
+                <article id="hero">
+                    <h1 class="heading_shadow">SPECIAL OFFER</h1>
+                        <p>
+                            30% Off This Weekend
+                        </p>
+                    <a href="/book/" class="cta"> Book now </a>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <h2>Our New Menu</h2>
+                    <img src="{% static 'Grill.jpg' %}">
+                    <p>Our menu consists of 12-15 seasonal items based on Italian, Greek, and Turkish culture.</p>
+                    <p><a href="/menu/">See our new menu</a></p>
+                </article>
+                <article>
+                    <h2>Book a table</h2>
+                    <img src="{% static 'salad.jpg' %}">
+                    <p>Reserve your table for an Italian, Greek, and Turkish dining experience.</p>
+                    <p><a href="/book/">Book your table now</a></p>
+                </article>
+                <article>
+                    <h2>Opening Hours</h2>
+                    <img src="{% static 'head_chef.jpg' %}">
+                    <p>The Little Lemon Restaurant is open 7 days a week, except for public holidays.</p>
+                    <ul>
+                        <li>Mon - Fri: 2pm - 10pm</li>
+                        <li>Sat: 2pm - 11pm</li>
+                        <li>Sun: 2pm - 9pm</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            {% include "footer.html" %}
+        </footer>
+    </body>
+</html>
+
+<style>
+    main {
+        margin: 1% 5%;
+    }
+
+    section {
+        display: flex;
+        gap: 2rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        flex-direction: row;
+    }
+
+    section article {
+        flex: 1;
+        border: 1px solid #EDEFEE;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #hero {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('../restaurant/static/restaurant_inside.jpg');
+        background-size: cover;
+        background-position: 75%;
+        color: white;
+        min-height: 200px;
+        text-align: center;
+    }
+
+    #hero h1 {
+        font-size: 4rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    #hero p {
+        font-size: 2rem;
+        margin: 0;
+        text-shadow: 2px 2px 4px #333333;
+    }
+
+    .cta {
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.9);
+        width: 200px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        padding: 8px;
+        border: 3px solid #fff;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+        margin: 1rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        color: #333333;
+        margin: 1rem 0;
+    }
+
+    article img {
+        max-width: 100%;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    main p {
+        font-size: 18px;
+    }
+
+    main a {
+        text-decoration: none;
+        font-size: 20px;
+        color: #EE9972;
+    }
+</style>

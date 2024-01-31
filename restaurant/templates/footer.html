@@ -1,0 +1,50 @@
+{% load static %}
+<div class = "footer">
+    <article>
+        <img src = "{% static 'logo_footer.png' %}" alt = "little lemon image">
+    </article>
+    <article>
+        <p>
+            Copyright Little Lemon
+        </p>
+    </article>
+</div>
+
+<style>
+    .footer {
+        font-family: 'Karla', sans-serif;
+        margin: 3% 5%;
+        display: flex;
+        padding: 20px 0;
+        background: peachpuff;
+        gap: 2rem 1rem;
+    }
+
+    article {
+        flex: 1;
+    }
+
+    .footer img {
+        padding: 0 20px;
+        float: left;
+    }
+
+    .footer p {
+        border-top: #333333;
+        border-top-width: medium;
+        border-top-style: none;
+        border-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-width: 0.1rem;
+        border-right-width: 0.1rem;
+        border-bottom-width: 0.1rem;
+        border-left-width: 0.1rem;
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+        text-align: right;
+        padding: 20px 20px 0 0;
+    }
+</style>
